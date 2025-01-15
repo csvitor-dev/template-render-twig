@@ -1,4 +1,5 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -52,7 +53,32 @@ nav a:hover {
 }
 
 main {
-  padding: 20px;
+  display: flex;
+
+  justify-content: center;
+  padding: 10px;
+}
+
+.container {
+  padding: 5px 10px;
+
+  width: 550px;
+
+  background-color: #b7b7b7;
+  border-radius: 50px;
+}
+
+.cover {
+  margin: 15px auto;
+  width: fit-content;
+
+  object-fit: contain;
+}
+
+.cover img {
+  width: 500px;
+  height: 250px;
+  border-radius: 25px;
 }
 
 footer {
@@ -63,4 +89,5 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+  margin-top: 25px;
 }
