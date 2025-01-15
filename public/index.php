@@ -12,9 +12,7 @@
 
     if (array_key_exists($path, $ROUTES)) {
         $route = $ROUTES[$path];
-        echo $twig->render($route['file_path'], [
-            'title' => $route['title'],
-        ]);
+        echo $twig->render($route['file_path'], $route['vars']);
         return;
     }
     echo $twig->render('front/errors/404.html.twig', [
