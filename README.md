@@ -14,4 +14,5 @@
 | Composer   | 2.8.4   |
 | PHP        | ^8.0.2  |
 | Twig       | ^3.0.0  |
+| Guzzle     | ^7.9.0  |
 | Nginx      | 1.14.0  |

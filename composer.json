@@ -3,7 +3,8 @@
     "description": "a template rendering system using the Twing engine (https://twig.symfony.com/)",
     "type": "project",
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "guzzlehttp/guzzle": "^7.9"
     },
     "autoload": {
         "psr-4": {
