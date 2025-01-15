@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} | My Finances News</title>
+  </head>
+  <body>
+    <header>
+      <h1>My Finances News</h1>
+      {{ include("front/base/navbar.html.twig") }}
+    </header>
+    <main>
+      {{ content | raw }}
+    </main>
+    <footer>
+      <p>
+        &copy; <strong>2025 My Finances News</strong> | All Rights Reserved.
+      </p>
+    </footer>
+  </body>
+</html>
