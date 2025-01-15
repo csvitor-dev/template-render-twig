@@ -11,7 +11,8 @@
       {{ include("front/base/navbar.html.twig") }}
     </header>
     <main>
-      {{ content | raw }}
+      {% block content %}
+      {% endblock %}
     </main>
     <footer>
       <p>
