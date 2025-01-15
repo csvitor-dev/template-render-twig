@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Rendering System | PHP</title>
-</head>
-<body>
-    <?php
-        date_default_timezone_set("America/Sao_Paulo");
+<?php
+    require "../vendor/autoload.php";
+    include "../templates/router.php";
+    use Twig\Loader\FilesystemLoader;
+    use Twig\Environment;
+    date_default_timezone_set("America/Sao_Paulo");
 
-        echo "<h1>" . phpversion() . "</h1>";
-    ?>
-</body>
-</html>
+    $loader = new FilesystemLoader('../templates/');
+    $twig = new Environment($loader);
+
+    $path = $_SERVER['REQUEST_URI'];
+
+    if (array_key_exists($path, $ROUTES)) {
+        $route = $ROUTES[$path];
+        echo $twig->render($route['file_path'], [
+            'title' => $route['title'],
+        ]);
+        return;
+    }
+    echo $twig->render('front/errors/404.html.twig', [
+        'title' => 'Page Not Found'
+    ]);
+    
