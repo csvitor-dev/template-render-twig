@@ -61,6 +61,7 @@ main {
 
 .container {
   padding: 5px 10px;
+  margin-bottom: 5rem;
 
   width: 550px;
 
@@ -71,14 +72,18 @@ main {
 .cover {
   margin: 15px auto;
   width: fit-content;
-
-  object-fit: contain;
 }
 
 .cover img {
   width: 500px;
   height: 250px;
   border-radius: 25px;
+}
+
+img#icon {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
 }
 
 footer {
