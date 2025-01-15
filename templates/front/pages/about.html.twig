@@ -1,5 +1,24 @@
 {% extends "front/base/template-base.html.twig" %}
 
 {% block content %}
-    <p>About</p>
+    <div class="container">
+        <div class="cover">
+            <img id="icon" src={{ user.avatar_url }} alt="csvitor-dev's cover image" />
+        <div>
+        <h2>About me</h2>
+        <p>Hello! I'm Vitor Costa, a passionate Software Engineering student specializing in backend development with .NET and frontend development using React and TypeScript. With over a year of experience in personal projects, I've been honing my skills to build efficient, scalable, and user-friendly software solutions.</p>
+
+        <h3>Skills and Expertise</h3>
+        <ul>
+            <li><strong>Programming Languages:</strong> Proficient in C#, Go, JavaScript, and TypeScript.</li>
+            <li><strong>Frameworks:</strong> Skilled in .NET for backend development and React for creating dynamic user interfaces.</li>
+            <li><strong>Specialized Projects:</strong> Search for experience in building applications related to financial management, White Label solutions, and Open Banking systems.</li>
+        </ul>
+
+        <h3>My Approach</h3>
+        <p>I believe in creating software that not only solves problems but does so in a clean, efficient, and maintainable way. Collaboration and continuous learning are key aspects of my work ethic, and I strive to stay updated with the latest trends and best practices in the tech world.</p>
+
+        <h3>Looking Ahead</h3>
+        <p>I'm actively seeking opportunities to contribute to innovative projects, particularly in backend development using .NET or Go and frontend development with modern JavaScript frameworks. My goal is to grow as a versatile developer, capable of tackling complex challenges across different domains.</p>
+    </div>
 {% endblock %}

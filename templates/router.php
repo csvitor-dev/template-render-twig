@@ -1,7 +1,9 @@
 <?php
     include "../src/Service/current_date.php";
+    include "../src/Service/fetch_gh_api.php";
 
     $date = current_date();
+    $csvitor_dev = fetch_gh_api("csvitor-dev");
 
     $ROUTES = [
         '/' => [
@@ -15,6 +17,6 @@
         ],
         '/about' => [
             'file_path' => 'front/pages/about.html.twig',
-            'vars' => ['title' => 'About', 'current_year' => $date],
+            'vars' => ['title' => 'About', 'current_year' => $date, 'user' => $csvitor_dev],
         ],
     ];
