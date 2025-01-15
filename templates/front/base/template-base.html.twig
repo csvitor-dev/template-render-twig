@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }} | My Finances News</title>
+    <title>{{ title }} | My Finances News ({{ current_year.year }})</title>
     <link rel="icon" type="image/svg+xml" href="/images/finance.svg"/>
     <link rel="stylesheet" href="/css/styles.css"/>
   </head>
   <body>
     <header>
-      <h1><a href="/">My Finances News</a></h1>
+      <h1>
+        <a href="/">My Finances News</a>
+      </h1>
+
+      <p>Edition: N° 1, {{ current_year.format }}</p>
+      
       {{ include("front/base/navbar.html.twig") }}
     </header>
     <main>
@@ -18,7 +23,7 @@
     </main>
     <footer>
       <p>
-        &copy; <strong>2025 My Finances News</strong> | All Rights Reserved.
+        &copy; <strong>{{ current_year.year }} My Finances News</strong> | All Rights Reserved.
       </p>
     </footer>
   </body>
