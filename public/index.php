@@ -6,7 +6,9 @@
     date_default_timezone_set("America/Sao_Paulo");
 
     $loader = new FilesystemLoader('../templates/');
-    $twig = new Environment($loader);
+    $twig = new Environment($loader, [
+        'cache' => '../var/cache',
+    ]);
 
     $path = $_SERVER['REQUEST_URI'];
 
