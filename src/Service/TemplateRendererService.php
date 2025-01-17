@@ -6,6 +6,18 @@
     use Twig\Environment;   
 
     class TemplateRendererService {
+        private Environment $twig;
+        private array $default_values;
+
+        public function __construct(Environment $environment)
+        {
+            $this->twig = $environment;
+            $this->default_values = [
+                'title' => 'Finance Hub',
+                'current_year' => current_date(),
+            ];
+        }
+
         private static function validate_template(string $section, string $template): string 
         {
             $file_path = "/front/{$section}/{$template}.html.twig";
@@ -16,27 +28,17 @@
             return $file_path;
         }
 
-        private static function default_values(): array
-        {
-            return [
-                'title' => 'Finance Hub',
-                'current_year' => current_date(),
-            ];
-        }
-
-        public static function render_page(Environment $env, string $template, $vars = []): void 
+        public function render_page(string $template, $vars = []): void 
         {
             $path = TemplateRendererService::validate_template('pages', $template);
-            $default = TemplateRendererService::default_values();
             
-            echo $env->render($path, array_merge($default, $vars));
+            echo $this->twig->render($path, array_merge($this->default_values, $vars));
         }
 
-        public static function render_error(Environment $env, string $template, $vars = []): void
+        public function render_error(string $template, $vars = []): void
         {
             $path = TemplateRendererService::validate_template('errors', $template);
-            $default = TemplateRendererService::default_values();
             
-            echo $env->render($path, array_merge($default, $vars));
+            echo $this->twig->render($path, array_merge($this->default_values, $vars));
         }
     }
