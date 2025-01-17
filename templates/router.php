@@ -1,22 +1,25 @@
 <?php
-    include "../src/Service/current_date.php";
-    include "../src/Service/fetch_gh_api.php";
+    namespace Template;
 
-    $date = current_date();
-    $csvitor_dev = fetch_gh_api("csvitor-dev");
+    require "../src/Service/fetch_gh_api.php";
+    
+    use App\Service;
 
-    $ROUTES = [
-        '/' => [
-            'file_path' => 'front/pages/home.html.twig',
-            'vars' => ['title' => 'Home',
-             'current_year' => $date],
-        ],
-        '/main-news' =>  [
-            'file_path' => 'front/pages/main-news.html.twig',
-            'vars' => ['title' => 'Main News', 'current_year' => $date],
-        ],
-        '/about' => [
-            'file_path' => 'front/pages/about.html.twig',
-            'vars' => ['title' => 'About', 'current_year' => $date, 'user' => $csvitor_dev],
-        ],
-    ];
+    function get_routes(): array {
+        $csvitor_dev = Service\fetch_gh_api("csvitor-dev");
+
+        return [
+            '/' => [
+                'file_path' => 'front/pages/home.html.twig',
+                'vars' => [],
+            ],
+            '/main-news' =>  [
+                'file_path' => 'front/pages/main-news.html.twig',
+                'vars' => ['title' => 'Main News'],
+            ],
+            '/about' => [
+                'file_path' => 'front/pages/about.html.twig',
+                'vars' => ['title' => 'About', 'user' => $csvitor_dev],
+            ],
+        ];
+    }
