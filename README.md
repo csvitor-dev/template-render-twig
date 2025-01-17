@@ -4,7 +4,7 @@
 
 ## Project Dependencies
 
-> For this project, I used the (**Laragon**)[https://laragon.org/] portable application - lightweight, extensible and fast
+> For this project, I used the [**Laragon**](https://laragon.org/) portable application - lightweight, extensible and fast
 > for development in PHP and other technologies --, a local server environment (a container, in practice) with
 > self-contained services, such as **MySQL** and **Nginx**.
 
