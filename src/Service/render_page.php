@@ -1,6 +1,8 @@
 <?php
     namespace App\Service;
 
+    require "../src/Service/current_date.php";
+
     use Twig\Environment;
 
     function render_page(Environment $twig, string $template, array $vars = []) {
