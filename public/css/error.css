@@ -1,0 +1,32 @@
+body,
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: rgb(240, 131, 131);
+  min-height: 100%;
+}
+
+#error {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
+
+  width: 30rem;
+  height: 25rem;
+
+  background-color: #e5e5e5;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.e404 {
+  color: #0f0f0f;
+}
+
+.e500 {
+  color: #ff7070;
+}
