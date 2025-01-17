@@ -1,5 +1,5 @@
 <?php
-    namespace Template;
+    namespace Templates\Router;
 
     require "../src/Service/fetch_gh_api.php";
     
