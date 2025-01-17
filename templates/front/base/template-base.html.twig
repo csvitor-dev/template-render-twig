@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }} | My Finances News ({{ current_year.year }})</title>
+    <title>{{ title }} | {{ current_year.year }}</title>
     <link rel="icon" type="image/svg+xml" href="/images/finance.svg"/>
     <link rel="stylesheet" href="/css/styles.css"/>
   </head>
   <body>
     <header>
       <h1>
-        <a href="/">My Finances News</a>
+        <a href="/">Finance Hub</a>
       </h1>
 
       <p>Edition: N° 1, {{ current_year.format }}</p>
@@ -23,7 +23,7 @@
     </main>
     <footer>
       <p>
-        &copy; <strong>{{ current_year.year }} My Finances News</strong> | All Rights Reserved.
+        &copy; <strong>{{ current_year.year }} Finance Hub</strong> | All Rights Reserved.
       </p>
     </footer>
   </body>
