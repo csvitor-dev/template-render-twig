@@ -14,7 +14,15 @@
 
         public function not_found() {
             echo $this->service->render_error('404', [
-                'title' => 'Page Not Found'
+                'title' => 'Page Not Found',
+                'status' => '404',
+            ]);
+        }
+
+        public function internal_server_error() {
+            echo $this->service->render_error('500', [
+                'title' => 'Server Unavaliable',
+                'status' => '500',
             ]);
         }
     }
