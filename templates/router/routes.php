@@ -10,15 +10,15 @@
 
         return [
             '/' => [
-                'file_path' => 'front/pages/home.html.twig',
+                'file_path' => 'home',
                 'vars' => [],
             ],
             '/main-news' =>  [
-                'file_path' => 'front/pages/main-news.html.twig',
+                'file_path' => 'main-news',
                 'vars' => ['title' => 'Main News'],
             ],
             '/about' => [
-                'file_path' => 'front/pages/about.html.twig',
+                'file_path' => 'about',
                 'vars' => ['title' => 'About', 'user' => $csvitor_dev],
             ],
         ];
