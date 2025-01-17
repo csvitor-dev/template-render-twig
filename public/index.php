@@ -1,9 +1,13 @@
 <?php
+    date_default_timezone_set("America/Sao_Paulo");
     require "../vendor/autoload.php";
-    include "../templates/router.php";
+    require "../src/Service/render_page.php";
+    require "../templates/router/routes.php";
+    
     use Twig\Loader\FilesystemLoader;
     use Twig\Environment;
-    date_default_timezone_set("America/Sao_Paulo");
+    use App\Service;
+    use Templates\Router;
 
     $loader = new FilesystemLoader('../templates/');
     $twig = new Environment($loader, [
@@ -11,13 +15,15 @@
     ]);
 
     $path = $_SERVER['REQUEST_URI'];
+    $_ROUTES = Router\get_routes();
 
-    if (array_key_exists($path, $ROUTES)) {
-        $route = $ROUTES[$path];
-        echo $twig->render($route['file_path'], $route['vars']);
+    if (array_key_exists($path, $_ROUTES)) {
+        $route = $_ROUTES[$path];
+
+        Service\render_page($twig, $route['file_path'], $route['vars']);
         return;
     }
-    echo $twig->render('front/errors/404.html.twig', [
-        'title' => 'Page Not Found'
+    Service\render_page($twig, 'front/errors/404.html.twig', [
+        'title' => 'Page Not Found',
     ]);
     
