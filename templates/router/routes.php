@@ -1,25 +1,15 @@
 <?php
     namespace Templates\Router;
 
-    require "../src/Service/fetch_gh_api.php";
-    
-    use App\Service;
+    use App\Controller\AboutController;
+    use App\Controller\HomeController;
+    use App\Controller\NewsController;
+    use Twig\Environment;
 
-    function get_routes(): array {
-        $csvitor_dev = Service\fetch_gh_api("csvitor-dev");
-
+    function get_routes(Environment $environment) {
         return [
-            '/' => [
-                'file_path' => 'home',
-                'vars' => [],
-            ],
-            '/main-news' =>  [
-                'file_path' => 'main-news',
-                'vars' => ['title' => 'Main News'],
-            ],
-            '/about' => [
-                'file_path' => 'about',
-                'vars' => ['title' => 'About', 'user' => $csvitor_dev],
-            ],
+            '/' => new HomeController($environment),
+            '/main-news' =>  new NewsController($environment),
+            '/about' => new AboutController($environment),
         ];
     }
