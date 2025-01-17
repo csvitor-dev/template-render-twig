@@ -1,4 +1,6 @@
 <?php
+    namespace App\Service;
+    
     function current_date() {
         $date = date("d/m/Y");
         $pieces = explode("/", $date);

@@ -1,4 +1,6 @@
 <?php
+    namespace App\Service;
+    
     use GuzzleHttp\Client;
 
     function fetch_gh_api($username) {
