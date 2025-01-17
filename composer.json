@@ -1,20 +1,20 @@
 {
-    "name": "csvitor-dev/template-render-twig",
-    "description": "a template rendering system using the Twing engine (https://twig.symfony.com/)",
-    "type": "project",
-    "require": {
-        "twig/twig": "^3.0",
-        "guzzlehttp/guzzle": "^7.9"
-    },
-    "autoload": {
-        "psr-4": {
-            "CsvitorDev\\TemplateRenderTwig\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "csvitor-dev",
-            "email": "csvitor.dev@gmail.com"
-        }
-    ]
+  "name": "csvitor-dev/template-render-twig",
+  "description": "a template rendering system using the Twing engine (https://twig.symfony.com/)",
+  "type": "project",
+  "require": {
+    "twig/twig": "^3.0",
+    "guzzlehttp/guzzle": "^7.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "csvitor-dev",
+      "email": "csvitor.dev@gmail.com"
+    }
+  ]
 }
